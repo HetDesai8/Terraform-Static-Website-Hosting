@@ -22,6 +22,21 @@ module "alb" {
         interval = 120
         timeout  = 30
       }
+      # targets = {
+      #   my_target = {
+      #     target_id = module.ec2_instance[0].id
+      #     port      = 80
+      #   }
+      #   my_other_target = {
+      #     target_id = module.ec2_instance[1].id
+      #     port      = 80
+      #   }
+      #   my_other_target_2 = {
+      #     target_id = module.ec2_instance[2].id
+      #     port      = 80
+      #   }
+
+      # }
     }
   ]
 
