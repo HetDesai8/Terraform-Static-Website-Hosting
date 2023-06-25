@@ -10,13 +10,22 @@ TASK Defination
 6) Setup an Application Load Balancer to distribute traffic to all the 3 instance servers in a round-robin fashion which means that request to the application load balancer on port 80 will get redirected to all the 3 different servers.
 7) validate website is being served over ALB public DNS.
 
+
+  ![image](https://github.com/HetDesai8/Terraform-Static-Website-Hosting/assets/77717443/c2828775-c392-486b-be16-1226a056c8ea)
+
 Optimization 
 1) Create an AMI of the EC2 instance
 2) Modify the Terraform code to create launch configuration/template with the AMI created in the above step with the same instance specification
 3) Modify the Terraform code to create Auto Scaling Group (ASG) with the above launch template to scale in when the CPU utilizaton if > 80% and scale out when CPU < 80%
 
+
+  ![image](https://github.com/HetDesai8/Terraform-Static-Website-Hosting/assets/77717443/fe9ba8cb-cab3-4c7b-9720-310608000d3c)
+
 Further optimization 
 1) Create a CloudFront Distribution -> Web-Distribution and point to ALB Public endpoint
+
+
+  ![image](https://github.com/HetDesai8/Terraform-Static-Website-Hosting/assets/77717443/7af44402-bca5-496c-8a30-4084e957293c)
 
 
 ## Requirements
