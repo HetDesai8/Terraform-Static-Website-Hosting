@@ -1,6 +1,23 @@
 # Terraform-Static-Website-Hosting
 Terraform Infrastructure for hosting a static website for global reach and scalability 
 
+TASK Defination
+1) Create a vpc with Internet Gateway, a set of public and private subnets in 3 AZ's
+2) Define Security Groups for all the 3 EC2 instances
+3) Setup 3 ec2 instances on public subnet
+4) Add 2GB EBS volumn per instance
+5) Ensure the default index.html page is accessible and should show the IP address of the instance serving request
+6) Setup an Application Load Balancer to distribute traffic to all the 3 instance servers in a round-robin fashion which means that request to the application load balancer on port 80 will get redirected to all the 3 different servers.
+7) validate website is being served over ALB public DNS.
+
+Optimization 
+1) Create an AMI of the EC2 instance
+2) Modify the Terraform code to create launch configuration/template with the AMI created in the above step with the same instance specification
+3) Modify the Terraform code to create Auto Scaling Group (ASG) with the above launch template to scale in when the CPU utilizaton if > 80% and scale out when CPU < 80%
+
+Further optimization 
+1) Create a CloudFront Distribution -> Web-Distribution and point to ALB Public endpoint
+
 
 ## Requirements
 
